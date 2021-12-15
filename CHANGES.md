@@ -1,5 +1,12 @@
 # Changes
 
+## cli v0.10.6 / Plugin Dev Kit v0.10.7
+
+Dec 15, 2021
+
+* Improved support for loading sample files
+* Minor bugfixes
+
 ## v0.10.5
 
 Dec 1, 2021
