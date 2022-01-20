@@ -18,7 +18,8 @@ import { fileURLToPath } from 'url';
 // maybe several seconds long or more, to hear the grain readers slowly sweeping
 // across the file.
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const SAMPLE_PATH = resolve(__dirname, './84bpm_DMaj_PluckingAbout.wav');
+// const SAMPLE_PATH = resolve(__dirname, './84bpm_DMaj_PluckingAbout.wav');
+const SAMPLE_PATH = resolve(__dirname, './JamuarySketch.wav');
 
 
 function grainTrain() {
@@ -30,9 +31,9 @@ function grainTrain() {
   // Next we derive our "reader" signals, `r` and `r2`, by swinging a slow sine
   // shaped LFO within [0, 1] and summing our phasors into it, multiplying each
   // phasor by 0.01 to ensure that it only sweeps through a tiny portion of the buffer (a grain).
-  let o = el.mul(0.2, el.add(1, el.cycle(0.01)));
-  let r = el.add(o, el.mul(0.01, t));
-  let r2 = el.add(o, el.mul(0.01, t2));
+  let o = el.mod(el.add(el.phasor(0.01), el.latch(el.train(4), el.rand())), 1);// el.mul(0.2, el.add(1, el.cycle(0.01)));
+  let r = el.add(o, el.mul(0.001, t));
+  let r2 = el.add(o, el.mul(0.001, t2));
 
   // Then here we put it together: a lowpass filter with cutoff modulation running
   // over the sum of the two grain readers: each grain reader is a hann window multiplied
@@ -50,7 +51,7 @@ function grainTrain() {
 // Await the "load" event and render!
 core.on('load', function() {
   let train = grainTrain();
-  core.render(train, train);
+  console.log(core.render(train, train));
 });
 
 core.initialize();
