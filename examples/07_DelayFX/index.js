@@ -1,4 +1,4 @@
-import {ElementaryNodeRenderer as core, el} from '@nick-thompson/elementary';
+import {ElementaryNodeRenderer as core, el} from '@elemaudio/core-lite';
 
 
 // This example demonstrates input processing with Elementary, applying some

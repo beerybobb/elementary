@@ -1,4 +1,4 @@
-import {ElementaryNodeRenderer as core, el} from '@nick-thompson/elementary';
+import {ElementaryNodeRenderer as core, el} from '@elemaudio/core-lite';
 
 
 // This example is the "Hello, world!" of writing audio processes in Elementary.

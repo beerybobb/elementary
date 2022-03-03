@@ -1,4 +1,4 @@
-import {ElementaryNodeRenderer as core, el} from '@nick-thompson/elementary';
+import {ElementaryNodeRenderer as core, el} from '@elemaudio/core-lite';
 import { dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';
 

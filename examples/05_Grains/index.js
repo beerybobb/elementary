@@ -1,4 +1,4 @@
-import {ElementaryNodeRenderer as core, el} from '@nick-thompson/elementary';
+import {ElementaryNodeRenderer as core, el} from '@elemaudio/core-lite';
 import { dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -18,8 +18,7 @@ import { fileURLToPath } from 'url';
 // maybe several seconds long or more, to hear the grain readers slowly sweeping
 // across the file.
 const __dirname = dirname(fileURLToPath(import.meta.url));
-// const SAMPLE_PATH = resolve(__dirname, './84bpm_DMaj_PluckingAbout.wav');
-const SAMPLE_PATH = resolve(__dirname, './JamuarySketch.wav');
+const SAMPLE_PATH = resolve(__dirname, './84bpm_DMaj_PluckingAbout.wav');
 
 
 function grainTrain() {
