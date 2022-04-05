@@ -1,4 +1,5 @@
-import {ElementaryNodeRenderer as core, el} from '@elemaudio/core-lite';
+import { el } from '@elemaudio/core';
+import {default as core} from '@elemaudio/node-renderer-lite';
 import { dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -12,7 +13,7 @@ const SAMPLE_PATH = resolve(__dirname, './Contact04.wav');
 function pattern() {
   // First we generate a simple phasor running at 8Hz and from that derive
   // our "baseTrain," which is a pulse train running at the same frequency.
-  let t = el.phasor(2);
+  let t = el.phasor(2, 0);
   let baseTrain = el.le(t, 0.5);
 
   // Then we derive our "ratchet" signal from `t` by a factor of 8 to create
@@ -36,6 +37,7 @@ function pattern() {
   return el.sample(
     {path: SAMPLE_PATH},
     train,
+    1,
   );
 }
 

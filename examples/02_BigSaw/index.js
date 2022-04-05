@@ -1,4 +1,5 @@
-import {ElementaryNodeRenderer as core, el} from '@elemaudio/core-lite';
+import { el } from '@elemaudio/core';
+import {default as core} from '@elemaudio/node-renderer-lite';
 
 
 // This example is a quick exercise in unison for a polyblep sawtooth synth voice.

@@ -1,4 +1,5 @@
-import {ElementaryNodeRenderer as core, el} from '@elemaudio/core-lite';
+import { el } from '@elemaudio/core';
+import {default as core} from '@elemaudio/node-renderer-lite';
 import { dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -24,13 +25,13 @@ const SAMPLE_PATH = resolve(__dirname, './84bpm_DMaj_PluckingAbout.wav');
 function grainTrain() {
   // Our phasors. The second, `t2`, is derived from `t` and offset by exactly
   // half a cycle.
-  let t = el.phasor(1);
+  let t = el.phasor(1, 0);
   let t2 = el.sub(el.add(t, 0.5), el.floor(el.add(t, 0.5)));
 
   // Next we derive our "reader" signals, `r` and `r2`, by swinging a slow sine
   // shaped LFO within [0, 1] and summing our phasors into it, multiplying each
   // phasor by 0.01 to ensure that it only sweeps through a tiny portion of the buffer (a grain).
-  let o = el.mod(el.add(el.phasor(0.01), el.latch(el.train(4), el.rand())), 1);// el.mul(0.2, el.add(1, el.cycle(0.01)));
+  let o = el.mod(el.add(el.phasor(0.01, 0), el.latch(el.train(4), el.rand())), 1);// el.mul(0.2, el.add(1, el.cycle(0.01)));
   let r = el.add(o, el.mul(0.001, t));
   let r2 = el.add(o, el.mul(0.001, t2));
 

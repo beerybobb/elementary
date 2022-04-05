@@ -1,4 +1,5 @@
-import {ElementaryNodeRenderer as core, el} from '@elemaudio/core-lite';
+import { el } from '@elemaudio/core';
+import {default as core} from '@elemaudio/node-renderer-lite';
 
 
 // This example builds upon the HelloSine example to implement some very basic FM synthesis,
@@ -44,8 +45,8 @@ core.on('load', function() {
   // Now we construct the left and right channel signals: in each channel we run our synth
   // voice over the two sequences of frequency values we constructed above, using the `hold` property
   // on `el.seq` to hold its output value right up until the next rising edge of the gate.
-  let left = el.mul(env, voice(el.seq({seq: s1, hold: true}, gate)));
-  let right = el.mul(env, voice(el.seq({seq: s2, hold: true}, gate)));
+  let left = el.mul(env, voice(el.seq({seq: s1, hold: true}, gate, 0)));
+  let right = el.mul(env, voice(el.seq({seq: s2, hold: true}, gate, 0)));
 
   // And then render it!
   core.render(

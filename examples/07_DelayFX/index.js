@@ -1,4 +1,5 @@
-import {ElementaryNodeRenderer as core, el} from '@elemaudio/core-lite';
+import { el } from '@elemaudio/core';
+import {default as core} from '@elemaudio/node-renderer-lite';
 
 
 // This example demonstrates input processing with Elementary, applying some
@@ -28,6 +29,7 @@ function fbdelay(sampleRate, delayTime, x) {
 }
 
 core.on('load', function(e) {
+  console.log('Note that you must invoke this enabling input (-i 2) at the commnad line for mic input.');
   console.log('Be careful. If your mic can hear your speakers, this will cause a feedback loop.');
 
   // Our render step is a simple chain of the above fbdelay and flanger functions

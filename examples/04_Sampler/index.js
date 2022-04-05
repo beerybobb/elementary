@@ -1,4 +1,5 @@
-import {ElementaryNodeRenderer as core, el} from '@elemaudio/core-lite';
+import { el } from '@elemaudio/core';
+import {default as core} from '@elemaudio/node-renderer-lite';
 import { dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';
 
@@ -52,7 +53,7 @@ function updateVoiceState(e) {
 // that sample on the rising edge of a pulse signal (i.e. a transition from 0 to 1).
 function samplerVoice(voice) {
   let gate = el.const({key: voice.key, value: voice.gate});
-  return el.mul(voice.gain, el.sample({path: voice.path}, gate));
+  return el.mul(voice.gain, el.sample({path: voice.path}, gate, 1));
 }
 
 // Finally, much like the previous example, we install a "midi" event handler
