@@ -11,7 +11,8 @@ Watch the [intro video](https://www.youtube.com/watch?v=AvCdrflFHu8) for the ful
 
 ## Installation
 
-See [Getting Started](https://www.elementary.audio/docs/)
+To run these examples you'll need to install both the `npm` dependencies, as shown below, and the Elementary
+command line binary. Follow the installation instructions [here on the docs](https://www.elementary.audio/docs/packages/node-renderer).
 
 ## Examples
 
