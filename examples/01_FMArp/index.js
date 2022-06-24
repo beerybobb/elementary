@@ -1,5 +1,5 @@
 import { el } from '@elemaudio/core';
-import {default as core} from '@elemaudio/node-renderer-lite';
+import {default as core} from '@elemaudio/node-renderer';
 
 
 // This example builds upon the HelloSine example to implement some very basic FM synthesis,

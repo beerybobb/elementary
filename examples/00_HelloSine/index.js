@@ -1,5 +1,5 @@
 import { el } from '@elemaudio/core';
-import {default as core} from '@elemaudio/node-renderer-lite';
+import {default as core} from '@elemaudio/node-renderer';
 
 
 // This example is the "Hello, world!" of writing audio processes in Elementary.

@@ -1,5 +1,5 @@
 import { el } from '@elemaudio/core';
-import {default as core} from '@elemaudio/node-renderer-lite';
+import {default as core} from '@elemaudio/node-renderer';
 import { dirname, resolve } from 'path';
 import { fileURLToPath } from 'url';
 
