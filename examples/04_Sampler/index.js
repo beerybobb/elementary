@@ -63,7 +63,7 @@ core.on('load', function() {
   core.on('midi', function(e) {
     updateVoiceState(e);
 
-    let out = el.add(Object.keys(voices).map(function(n) {
+    let out = el.add(...Object.keys(voices).map(function(n) {
       return samplerVoice(voices[n]);
     }));
 
